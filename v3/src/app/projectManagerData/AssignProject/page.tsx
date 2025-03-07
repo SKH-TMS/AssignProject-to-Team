@@ -6,7 +6,7 @@ import NavbarUser from "../../userData/NavbarUser/page";
 import { ITeam } from "@/models/Team"; // Import ITeam interface
 import { IProject } from "@/models/Project"; // Import IProject interface
 import { IAssignedProjectLog } from "@/models/AssignedProjectLogs"; // Import IAssignedProjectLog interface
-
+import toast from "react-hot-toast";
 export default function AssignProject() {
   const router = useRouter();
   const [teams, setTeams] = useState<ITeam[]>([]);
@@ -30,6 +30,8 @@ export default function AssignProject() {
           setTeams(data.teams);
         } else {
           setError(data.message || "Failed to fetch teams.");
+          toast.error(data.message || "Failed to fetch teams.");
+          router.push("/userData/LoginUser");
         }
       } catch (error) {
         console.error("Error fetching teams:", error);
@@ -76,7 +78,7 @@ export default function AssignProject() {
   // Handle project assignment
   const handleAssignProject = async () => {
     if (!selectedTeam || !selectedProject || !selectedDeadline) {
-      alert("Please select a project, team, and deadline.");
+      toast.error("Please select a project, team, and deadline.");
       return;
     }
 
@@ -89,6 +91,7 @@ export default function AssignProject() {
 
     if (isNaN(combinedDeadline.getTime())) {
       setError("Invalid date/time selection.");
+      toast.error("Invalid date/time selection.");
       setLoading(false);
       return;
     }
@@ -109,14 +112,16 @@ export default function AssignProject() {
 
       const data = await response.json();
       if (data.success) {
-        alert("Project assigned successfully!");
+        toast.success("Project assigned successfully!");
         router.push("/projectManagerData/ProfileProjectManager");
       } else {
         setError(data.message);
+        toast.error(data.message);
       }
     } catch (error) {
       console.error("Error assigning project:", error);
       setError("Failed to assign project. Please try again.");
+      toast.error("Failed to assign project. Please try again.");
     }
 
     setLoading(false);
