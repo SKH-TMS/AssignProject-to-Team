@@ -40,3 +40,4 @@ this includes the
 6.  deadline: Date.
 
 I have removed the deadline field from the Project and included it in the AssignedProjectLogs
+I have added the assignedLog in the Project to track rather the project is assignoed to any team or not
