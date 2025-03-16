@@ -72,7 +72,7 @@ Fixed some errors because during the creation of project or creation of the Team
 
 ### Changes
 
-Added the ZOD integration for the backend Validation. Now if any error occurs during backed validation the error will be directed to the frontend and client or user will be able to see the error and its occuring reason.
+Added the ZOD integration for the Server Side Validation. Now if any error occurs during Server Side  the error will be directed to the frontend and client or user will be able to see the error and its occuring reason.
 
 #### Changes in File Structure
 
