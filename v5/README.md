@@ -2,7 +2,7 @@
 
 ## Changes
 
-Added the ZOD integration for the backend Validation. Now if any error occurs during backed validation the error will be directed to the frontend and client or user will be able to see the error and its occuring reason.
+Added the ZOD integration for the Server Side Validation. Now if any error occurs during Server Side  the error will be directed to the frontend and client or user will be able to see the error and its occuring reason.
 
 ### Changes in File Structure
 
@@ -22,4 +22,6 @@ I have added the "Schemas" folder in "src" folder.
 
 ## Fixing
 
-Fixed Deadline format now all the pages "CreateProject","CreateTeam"and"AssignProject" will store the deadline in the similer format.
+
+1. Fixed Deadline format now all the pages "CreateProject","CreateTeam"and"AssignProject" will store the deadline in the similer format.
+2. Fixed Regx value of the Models before the id would not be able to excede the 10 but with the updated regex the id can be anywhere between 0 to infinty.
