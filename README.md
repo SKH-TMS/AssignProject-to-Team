@@ -97,10 +97,6 @@ I have added the "Schemas" folder in "src" folder.
 
 ## Version 6
 
-Below is a detailed section you can add to your README that summarizes all the changes made across your API route files and page components:
-
----
-
 ### Production Build Fixes & Changes
 
 During development, the project ran smoothly with `npm run dev`. However, production builds (`npm run build`) were failing because of two main issues:
